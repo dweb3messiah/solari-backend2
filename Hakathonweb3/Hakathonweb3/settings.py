@@ -76,11 +76,15 @@ WSGI_APPLICATION = 'Hakathonweb3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+DATABASE_URL='postgresql://test_postgrea_user:ffVzle2rR2Hz2B6qeLEqIREfeCpQplFy@dpg-crv9a4e8ii6s738nt6ug-a.oregon-postgres.render.com/test_postgrea'
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(DATABASE_URL)
 }
 
 REST_FRAMEWORK = {
